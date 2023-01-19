@@ -46,6 +46,7 @@ const resetValue = () => {
   show.value = 0;
 };
 
+// remove value from display
 const deleteValue = () => {
   if (calData) {
     let strValue = calData.join("");
