@@ -1,55 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>simple calculator</title>
-</head>
-<body class="bg-[#8ae1fb] "> 
+  </head>
+  <body class="bg-[#8ae1fb]">
     <main class="h-screen grid items-center content-center mx-auto w-fit">
-        <div class="calculator w-[300px] px-4 py-5 bg-black mx-auto rounded-md">
-            <!-- calculator display -->
-            <div class="display">
-                <input type="text" class="text-right text-2xl px-4 py-6 bg-[#d2dde1] font-bold w-full flex items-center" id="show" value="0">
-            </div>
-        <div class="content mt-3 px-2" >
-            <!-- calculator button div -->
-            <div class=" gap-x-5 gap-y-3 my-3  grid grid-cols-4 justify-items-center" id="calculatorBtn">
+      <div class="calculator w-[300px] px-4 py-5 bg-black mx-auto rounded-md">
+        <!-- calculator display -->
+        <div class="display">
+          <input
+            type="text"
+            class="text-right text-2xl px-4 py-6 bg-[#d2dde1] font-bold w-full flex items-center"
+            id="show"
+            value="0"
+          />
+        </div>
+        <div class="content mt-3 px-2">
+          <!-- calculator button div -->
+          <div
+            class="gap-x-5 gap-y-3 my-3 grid grid-cols-4 justify-items-center"
+            id="calculatorBtn"
+          >
+            <button
+              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl"
+              onclick="getValue(7)"
+            >
+              7
+            </button>
+            <button
+              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl"
+              onclick="getValue(8)"
+            >
+              8
+            </button>
+            <button
+              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl"
+              onclick="getValue(9)"
+            >
+              9
+            </button>
+            <button
+              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl"
+              onclick="getValue('/')"
+            >
+              /
+            </button>
+            <button
+              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl"
+              onclick="getValue(4)"
+            >
+              4
+            </button>
+            <button
+              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl"
+              onclick="getValue(5)"
+            >
+              5
+            </button>
+            <button
+              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl"
+              onclick="getValue(6)"
+            >
+              6
+            </button>
+            <button
+              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl"
+              onclick="getValue('*')"
+            >
+              *
+            </button>
+            <button
+              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl"
+              onclick="getValue(1)"
+            >
+              1
+            </button>
+            <button
+              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl"
+              onclick="getValue(2)"
+            >
+              2
+            </button>
+            <button
+              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl"
+              onclick="getValue(3)"
+            >
+              3
+            </button>
+            <button
+              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl"
+              onclick="getValue('-')"
+            >
+              -
+            </button>
+            <button
+              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl"
+              onclick="getValue('.')"
+            >
+              .
+            </button>
+            <button
+              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl"
+              onclick="getValue(0)"
+            >
+              0
+            </button>
+            <button
+              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl"
+              onclick="getValue('+')"
+            >
+              +
+            </button>
+            <button
+              class="text-white bg-[#fe4a00] rounded-[3px] p-2 w-12 h-12 outline-none text-2xl"
+              onclick="getResult()"
+            >
+              =
+            </button>
+          </div>
 
-                <button class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl"  onclick="getValue(7)">7</button>
-                <button class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl"  onclick="getValue(8)">8</button>
-                <button class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl"  onclick="getValue(9)">9</button>
-                <button class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl"  onclick="getValue('/')">/</button>
-                <button class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl"  onclick="getValue(4)">4</button>
-                <button class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl"  onclick="getValue(5)">5</button>
-                <button class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl"  onclick="getValue(6)">6</button>
-                <button class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl"  onclick="getValue('*')">*</button>
-                <button class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl"  onclick="getValue(1)">1</button>
-                <button class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl"  onclick="getValue(2)">2</button>
-                <button class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl"  onclick="getValue(3)">3</button>
-                <button class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl"  onclick="getValue('-')">-</button>
-                <button class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl"  onclick="getValue('.')">.</button>
-                <button class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl"  onclick="getValue(0)">0</button>
-                <button class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl"  onclick="getValue('+')">+</button>
-                <button class="text-white bg-[#fe4a00] rounded-[3px] p-2 w-12 h-12 outline-none text-2xl" onclick="getResult()">=</button>
-                
-            </div>
-            
-            <div class="grid grid-cols-2 gap-2">
-                <!-- reset button -->
-               <button class="bg-[#fe4a00] rounded-[3px] p-2  h-12 outline-none text-xl text-white w-full"  onclick="resetValue()">AC</button>
-               <!-- delete button -->
-               <button class="bg-[#fe4a00] rounded-[3px] p-2 h-12 outline-none text-xl text-white"  onclick="deleteValue()">DEL</button>
-                
-            </div>
+          <div class="grid grid-cols-2 gap-2">
+            <!-- reset button -->
+            <button
+              class="bg-[#fe4a00] rounded-[3px] p-2 h-12 outline-none text-xl text-white w-full"
+              onclick="resetValue()"
+            >
+              AC
+            </button>
+            <!-- delete button -->
+            <button
+              class="bg-[#fe4a00] rounded-[3px] p-2 h-12 outline-none text-xl text-white"
+              onclick="deleteValue()"
+            >
+              DEL
+            </button>
+          </div>
         </div>
-        </div>
+      </div>
     </main>
-    
-
 
     <script src="./assets/js/app.js"></script>
-</body>
+  </body>
 </html>
