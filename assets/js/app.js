@@ -11,24 +11,25 @@ const getValue = (value) => {
   ) {
     return false;
   }
-  // dot check
+  // extra dot check
   if (calData && calData.join("").indexOf(".") != -1 && value == ".") {
     const symbolPattern = /[*+/-]/;
     if (symbolPattern.test(calData.join(""))) {
     } else {
       return false;
     }
-    console.log("hi");
   }
   calData.push(value);
   show.value = calData.join("");
 };
 
+// get result when click equal button
 const getResult = () => {
   let result = eval(calData.join(""));
   if (!result) {
     return;
   }
+  // integer check
   if (!Number.isInteger(result)) {
     result = result.toFixed(4);
     calData = [result];
