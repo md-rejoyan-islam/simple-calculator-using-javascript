@@ -40,6 +40,7 @@ const getResult = () => {
   show.value = result;
 };
 
+// calculator reset value
 const resetValue = () => {
   calData = [];
   show.value = 0;
