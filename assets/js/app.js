@@ -1,8 +1,9 @@
 const calculatorBtn = document.getElementById("calculatorBtn");
 const show = document.getElementById("show");
 
-let calData = [];
 
+// value receive from button
+let calData = [];
 const getValue = (value) => {
   // don't show symbol at first
   if (
