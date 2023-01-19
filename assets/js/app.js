@@ -29,6 +29,7 @@ const getResult = () => {
   if (!result) {
     return;
   }
+
   // integer check
   if (!Number.isInteger(result)) {
     result = result.toFixed(4);
