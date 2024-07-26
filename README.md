@@ -11,6 +11,10 @@
 - onclick
 - eval
 
-### Live Website
+### Live Preview
+
+    ```html
+    <a href="https://md-rejoyan-islam.github.io/simple-calculator-using-javascript/">Preview </a>
+    ```
 
 <a href="https://md-rejoyan-islam.github.io/simple-calculator-using-javascript/">Preview </a>
