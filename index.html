@@ -5,16 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>simple calculator</title>
+
+    <title>Simple Calculator</title>
   </head>
-  <body class="bg-[#8ae1fb]">
-    <main class="h-screen grid items-center content-center mx-auto w-fit">
-      <div class="calculator w-[300px] px-4 py-5 bg-black mx-auto rounded-md">
+  <body class="bg-[#f5f7ff]">
+    <main
+      class="min-h-screen grid items-center content-center mx-auto w-fit py-10 px-4"
+    >
+      <div
+        class="calculator w-[300px] sm:w-[350px] px-4 py-5 bg-white shadow-[rgba(99,99,99,0.1)_0px_2px_8px_0px] mx-auto rounded-2xl"
+      >
         <!-- calculator display -->
         <div class="display">
           <input
             type="text"
-            class="text-right text-2xl px-4 py-6 bg-[#d2dde1] font-bold w-full flex items-center"
+            class="text-right text-2xl px-4 py-6 bg-[#d8ddf0] font-bold w-full flex items-center"
             id="show"
             value="0"
           />
@@ -22,118 +27,128 @@
         <div class="content mt-3 px-2">
           <!-- calculator button div -->
           <div
-            class="gap-x-5 gap-y-3 my-3 grid grid-cols-4 justify-items-center"
+            class="gap-x-5 gap-y-3 my-3 grid grid-cols-4 justify-items-center w-full"
             id="calculatorBtn"
           >
             <button
-              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl hover:bg-[#97a5aa]" 
+              class="active:scale-90 transition-transform duration-100 bg-[#d8ddf0] w-12 h-12 sm:w-16 sm:h-16 rounded-full font-bold text-gray-600 outline-none text-xl sm:text-3xl hover:bg-[#d8ddff]"
               onclick="getValue(7)"
             >
               7
             </button>
             <button
-              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl hover:bg-[#97a5aa]"
+              class="active:scale-90 transition-transform duration-100 bg-[#d8ddf0] w-12 h-12 sm:w-16 sm:h-16 rounded-full font-bold text-gray-600 outline-none text-xl sm:text-3xl hover:bg-[#d8ddff]"
               onclick="getValue(8)"
             >
-              8
+              <span>8</span>
             </button>
             <button
-              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl hover:bg-[#97a5aa]"
+              class="active:scale-90 transition-transform duration-100 bg-[#d8ddf0] w-12 h-12 sm:w-16 sm:h-16 rounded-full font-bold text-gray-600 outline-none text-xl sm:text-3xl hover:bg-[#d8ddff]"
               onclick="getValue(9)"
             >
               9
             </button>
             <button
-              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl hover:bg-[#97a5aa]"
+              class="active:scale-90 transition-transform duration-100 bg-[#2388ff] grid place-content-center text-white rounded-full p-2 sm:w-16 sm:h-16 h-12 w-12 outline-none text-2xl sm:text-5xl hover:bg-[#2388e1]"
               onclick="getValue('/')"
             >
-              /
+              <span class="p-0 -mt-1 sm:-mt-2 font-bold sm:font-semibold">
+                &#247;
+              </span>
             </button>
             <button
-              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl hover:bg-[#97a5aa]"
+              class="active:scale-90 transition-transform duration-100 bg-[#d8ddf0] w-12 h-12 sm:w-16 sm:h-16 rounded-full font-bold text-gray-600 outline-none text-xl sm:text-3xl hover:bg-[#d8ddff]"
               onclick="getValue(4)"
             >
               4
             </button>
             <button
-              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl hover:bg-[#97a5aa]"
+              class="active:scale-90 transition-transform duration-100 bg-[#d8ddf0] w-12 h-12 sm:w-16 sm:h-16 rounded-full font-bold text-gray-600 outline-none text-xl sm:text-3xl hover:bg-[#d8ddff]"
               onclick="getValue(5)"
             >
               5
             </button>
             <button
-              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl hover:bg-[#97a5aa]"
+              class="active:scale-90 transition-transform duration-100 bg-[#d8ddf0] w-12 h-12 sm:w-16 sm:h-16 rounded-full font-bold text-gray-600 outline-none text-xl sm:text-3xl hover:bg-[#d8ddff]"
               onclick="getValue(6)"
             >
               6
             </button>
             <button
-              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl hover:bg-[#97a5aa]"
+              class="bg-[#ffc804] grid place-content-center text-white rounded-full p-2 w-12 h-12 sm:w-16 sm:h-16 outline-none text-2xl sm:text-5xl hover:opacity-70 active:scale-90 transition-transform duration-100"
               onclick="getValue('*')"
             >
-              *
+              <span class="p-0 -mt-1 sm:-mt-2 font-bold sm:font-semibold"
+                >&#215;
+              </span>
             </button>
             <button
-              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl hover:bg-[#97a5aa]"
+              class="active:scale-90 transition-transform duration-100 bg-[#d8ddf0] w-12 h-12 sm:w-16 sm:h-16 rounded-full font-bold text-gray-600 outline-none text-xl sm:text-3xl hover:bg-[#d8ddff]"
               onclick="getValue(1)"
             >
               1
             </button>
             <button
-              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl hover:bg-[#97a5aa]"
+              class="active:scale-90 transition-transform duration-100 bg-[#d8ddf0] w-12 h-12 sm:w-16 sm:h-16 rounded-full font-bold text-gray-600 outline-none text-xl sm:text-3xl hover:bg-[#d8ddff]"
               onclick="getValue(2)"
             >
               2
             </button>
             <button
-              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl hover:bg-[#97a5aa]"
+              class="active:scale-90 transition-transform duration-100 bg-[#d8ddf0] w-12 h-12 sm:w-16 sm:h-16 rounded-full font-bold text-gray-600 outline-none text-xl sm:text-3xl hover:bg-[#d8ddff]"
               onclick="getValue(3)"
             >
               3
             </button>
             <button
-              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl hover:bg-[#97a5aa]"
+              class="bg-[#ff445a] grid place-content-center text-white rounded-full p-2 sm:w-16 sm:h-16 outline-none text-2xl sm:text-5xl w-12 h-12 hover:opacity-50 active:scale-90 transition-transform duration-100"
               onclick="getValue('-')"
             >
-              -
+              <span class="p-0 -mt-1 sm:-mt-2 font-bold sm:font-semibold">
+                &#8722;
+              </span>
             </button>
             <button
-              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl hover:bg-[#97a5aa]"
+              class="active:scale-90 transition-transform duration-100 bg-[#d8ddf0] rounded-full p-2 w-12 h-12 sm:w-16 sm:h-16 font-bold text-gray-600 outline-none text-xl sm:text-3xl hover:bg-[#d8ddff] flex items-center justify-center"
               onclick="getValue('.')"
             >
-              .
+              <span class="text-4xl -mt-5">.</span>
             </button>
             <button
-              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl hover:bg-[#97a5aa]"
+              class="active:scale-90 transition-transform duration-100 bg-[#d8ddf0] w-12 h-12 sm:w-16 sm:h-16 rounded-full font-bold text-gray-600 outline-none text-xl sm:text-3xl hover:bg-[#d8ddff]"
               onclick="getValue(0)"
             >
               0
             </button>
             <button
-              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl hover:bg-[#97a5aa]"
+              class="active:scale-90 transition-transform duration-100 bg-[#63de77] grid place-content-center text-white rounded-full p-2 sm:w-16 sm:h-16 w-12 h-12 outline-none text-2xl sm:text-5xl hover:opacity-70"
               onclick="getValue('+')"
             >
-              +
+              <span class="p-0 -mt-1 sm:-mt-2 font-bold sm:font-semibold">
+                &#43;
+              </span>
             </button>
             <button
-              class="bg-[#d2dde1] rounded-[3px] p-2 w-12 h-12 outline-none text-xl hover:bg-[#97a5aa]"
+              class="active:scale-90 transition-transform duration-100 bg-[#c67909] grid place-content-center text-white rounded-full p-2 w-12 h-12 sm:w-16 sm:h-16 outline-none text-2xl sm:text-5xl hover:opacity-70"
               onclick="getResult()"
             >
-              =
+              <span class="p-0 -mt-1 sm:-mt-2 font-bold sm:font-semibold">
+                &#61;
+              </span>
             </button>
           </div>
 
           <div class="grid grid-cols-2 gap-2">
             <!-- reset button -->
             <button
-              class="bg-[#fe4a00] rounded-[3px] p-2 h-12 outline-none text-xl text-white w-full hover:bg-[#fe0000ec]"
-              onclick="resetValue()" 
+              class="active:scale-90 transition-transform duration-100 bg-[#1f2b54] rounded-full p-2 h-12 outline-none text-xl text-white w-full hover:opacity-70"
+              onclick="resetValue()"
             >
               AC
             </button>
             <!-- delete button -->
             <button
-              class="bg-[#fe4a00] hover:bg-[#fe0000ec] rounded-[3px] p-2 h-12 outline-none text-xl text-white"
+              class="active:scale-90 transition-transform duration-100 bg-[#fe4a00] hover:bg-[#fe0000ec] rounded-full p-2 h-12 outline-none text-xl text-white"
               onclick="deleteValue()"
             >
               DEL

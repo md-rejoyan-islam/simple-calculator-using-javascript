@@ -1,7 +1,6 @@
 const calculatorBtn = document.getElementById("calculatorBtn");
 const show = document.getElementById("show");
 
-
 // value receive from button
 let calData = [];
 const getValue = (value) => {
@@ -20,6 +19,18 @@ const getValue = (value) => {
       return false;
     }
   }
+  //  remove extra beside symbol
+  if (
+    calData &&
+    (calData.join("").endsWith("+") ||
+      calData.join("").endsWith("-") ||
+      calData.join("").endsWith("*") ||
+      calData.join("").endsWith("/")) &&
+    (value == "+" || value == "-" || value == "*" || value == "/")
+  ) {
+    calData.pop();
+  }
+
   calData.push(value);
   show.value = calData.join("");
 };
